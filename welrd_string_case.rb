@@ -8,7 +8,17 @@
 # в каждом слове с помощью цикла заменим регистр каждой нечетной буквы 
 # encoding UTF-8
 def weirdcase(str)
-	print str.upcase!.split(' ')
-
+	arr_str=[]
+	arr_str = str.upcase!.split(' ')
+	for item in arr_str do 
+		i = 1
+		(item.size).times do 
+			if i%2 == 1 then 
+			 item[i] = item[i].to_s.downcase
+			end	
+			i +=1
+		end	
+	end	
+	arr_str.join(" ")
 end	
-puts weirdcase('Hello Word')
+#print weirdcase('This is a test')
